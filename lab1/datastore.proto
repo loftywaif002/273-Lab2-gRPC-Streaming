@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+message Request {
+    string data = 1;
+}
+
+message Response {
+    string data = 1;
+}
+
+message Stream_Request {
+    string data = 1;
+}
+
+message Stream_Response {
+    string data = 1;
+    
+}
+
+service Datastore {
+   rpc put(Request) returns (Response) {}
+   rpc get(Request) returns (Response) {}
+   
+   rpc StreamPutMethod (stream Stream_Request) returns (stream Stream_Response) {}
+   rpc StreamGetMethod (stream Stream_Request) returns (stream Stream_Response) {}
+} 
