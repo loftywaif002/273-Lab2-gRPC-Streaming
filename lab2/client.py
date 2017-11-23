@@ -69,19 +69,6 @@ def main():
             print(x.data)
             CreateReplica.clone_db(final,x.data)
                 
-        
-    
-
-    #value = 'foo'
-    #print("## PUT Request: value = " + value) 
-    #resp = client.put(value)
-    #key = resp.data
-    #print("## PUT Response: key = " + key)
-
-    #print("## GET Request: key = " + key) 
-    #resp = client.get(key)
-    #print("## GET Response: value = " + resp.data) 
-
 
 if __name__ == "__main__":
     main()
