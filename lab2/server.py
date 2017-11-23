@@ -43,10 +43,11 @@ class MyDatastoreServicer(datastore_pb2.DatastoreServicer):
 
     def StreamPutMethod(self, request_iterator, context):
         for req in request_iterator:
-            print("inside put method")
+            print("inside put method-server side")
             print(req.data)
             key = uuid.uuid4().hex
             key = key.encode("utf-8")
+            print("key generated:"+str(key))
             s = req.data
             s = s.encode("utf-8")
             self.db.put(key, s)
@@ -54,11 +55,11 @@ class MyDatastoreServicer(datastore_pb2.DatastoreServicer):
 
     def StreamGetMethod(self, request_iterator, context):
         for req in request_iterator:
-            print("inside get method")
+            print("inside get method-server side")
             s = req.data.encode("utf-8")
             value = self.db.get(s)
             val=value.decode('utf-8')
-            print(val)
+            print("data is: "+ str(val))
             yield datastore_pb2.Stream_Response(data=value)
     
 def run(host, port):

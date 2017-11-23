@@ -28,11 +28,11 @@ class CreateReplica():
         db2.put(key,encoded_data)
         db3.put(key,encoded_data)
         print("getting data from clone1")
-        print(db1.get(key))
-        print("getting data from clone1")
-        print(db2.get(key))
-        print("getting data from clone1")
-        print(db3.get(key))
+        print(db1.get(key).decode('utf-8'))
+        print("getting data from clone2")
+        print(db2.get(key).decode('utf-8'))
+        print("getting data from clone2")
+        print(db3.get(key).decode('utf-8'))
 
 
 	    
