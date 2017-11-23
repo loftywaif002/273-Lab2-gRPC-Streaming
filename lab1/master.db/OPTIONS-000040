@@ -50,7 +50,7 @@
   manifest_preallocation_size=4194304
   max_log_file_size=0
   enable_write_thread_adaptive_yield=false
-  wal_dir=replica2.db
+  wal_dir=master.db
   WAL_size_limit_MB=0
   delayed_write_rate=2097152
   disable_data_sync=false

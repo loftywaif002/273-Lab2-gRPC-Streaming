@@ -10,7 +10,7 @@ import random
 import time
 import uuid
 import rocksdb
-from decorator import Decorator
+from clone_creator import CreateReplica
 from concurrent.futures import ThreadPoolExecutor
 PORT = 3000
 
@@ -67,6 +67,7 @@ def main():
         val = client.get_stream_requests(getResponse(final))       
         for x in val:
             print(x.data)
+            CreateReplica.clone_db(final,x.data)
                 
         
     
